@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="br.com.itecbrazil.mapper.ClienteMapper">
+
+	<insert id="insertCliente" parameterType="br.com.itecbrazil.model.Cliente">
+		insert into
+		clientes(nome)
+		values(#{nome})
+	</insert>
+
+	<select id="readClientes" resultType="br.com.itecbrazil.model.Cliente">
+		select * from
+		clientes
+	</select>
+
+	<update id="updateCliente" parameterType="br.com.itecbrazil.model.Cliente">
+		update clientes set
+		nome = #{nome} where id = #{id}
+	</update>
+
+	<delete id="deleteCliente" parameterType="br.com.itecbrazil.model.Cliente">
+		delete from clientes where id = #{id}
+	</delete>
+
+</mapper>
